@@ -1,0 +1,22 @@
+<script>
+	function hiddenEmail(email) {
+		var emailArr=[];
+		var i=0;
+		while (i<email.length) {
+			emailArr[i]=email.charAt(i);
+			i++;
+		}
+		var except = email.indexOf('@');
+		var i=0;
+		while (i < email.length) { 
+			if (i!=except && i%2!=0) 
+				emailArr[i]='*';
+			i+=1;
+		}
+		var result = emailArr.join('');
+		return result;
+	}
+var test = hiddenEmail(prompt("Please, enter the email address you would like to convert to a partially hidden one."))
+alert(test);
+	
+</script>
